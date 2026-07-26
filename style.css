@@ -1,0 +1,399 @@
+/* ===========================
+   Reset
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+
+    background:url("IMG-1.jpeg") no-repeat center center fixed;
+    background-size:cover;
+
+    height:100vh;
+    overflow:hidden;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:white;
+    text-align:center;
+}
+
+
+/* Dark Overlay */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    left:0;
+    top:0;
+
+    width:100%;
+    height:100%;
+
+    background:rgba(0,0,0,.45);
+
+    z-index:-1;
+
+}
+
+
+/* ===========================
+   Main Container
+=========================== */
+
+.container{
+
+    width:90%;
+    max-width:700px;
+
+    padding:35px;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(10px);
+
+    box-shadow:0 0 30px rgba(0,0,0,.35);
+
+}
+
+
+/* ===========================
+   Heading
+=========================== */
+
+h1{
+
+    font-size:50px;
+
+    margin-bottom:20px;
+
+    animation:pulse 2s infinite;
+
+}
+
+
+/* ===========================
+   Subtitle
+=========================== */
+
+.subtitle{
+
+    font-size:22px;
+
+    line-height:1.8;
+
+    margin-bottom:30px;
+
+}
+
+
+/* ===========================
+   Countdown
+=========================== */
+
+#countdown{
+
+    font-size:28px;
+
+    font-weight:bold;
+
+    margin-top:20px;
+
+    margin-bottom:30px;
+
+}
+
+
+/* ===========================
+   Surprise Button
+=========================== */
+
+#surpriseBtn{
+
+    padding:16px 45px;
+
+    font-size:20px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:white;
+
+    color:#ff2d75;
+
+    cursor:pointer;
+
+    transition:.4s;
+
+    font-weight:bold;
+
+}
+
+#surpriseBtn:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:0 0 20px white;
+
+}
+
+
+/* ===========================
+   Letter Popup
+=========================== */
+
+#letter{
+
+    position:fixed;
+
+    left:0;
+    top:0;
+
+    width:100%;
+    height:100%;
+
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+
+    background:rgba(0,0,0,.75);
+
+    z-index:1000;
+
+}
+
+
+/* Letter Box */
+
+.letter-box{
+
+    width:90%;
+    max-width:700px;
+
+    max-height:85vh;
+
+    overflow:auto;
+
+    background:white;
+
+    color:#333;
+
+    padding:35px;
+
+    border-radius:25px;
+
+    text-align:left;
+
+    animation:popup .5s;
+
+}
+
+
+/* Letter Heading */
+
+.letter-box h2{
+
+    text-align:center;
+
+    color:#ff2d75;
+
+    margin-bottom:20px;
+
+}
+
+
+/* Letter Text */
+
+.letter-box p{
+
+    font-size:20px;
+
+    line-height:2;
+
+}
+
+
+/* Close Button */
+
+.closeBtn{
+
+    margin-top:25px;
+
+    width:100%;
+
+    padding:15px;
+
+    font-size:18px;
+
+    border:none;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    background:#ff2d75;
+
+    color:white;
+
+}
+
+.closeBtn:hover{
+
+    background:#e0005c;
+
+}
+
+
+/* ===========================
+   Floating Hearts
+=========================== */
+
+.heart{
+
+    position:fixed;
+
+    bottom:-100px;
+
+    color:red;
+
+    animation:float linear infinite;
+
+    opacity:.8;
+
+    pointer-events:none;
+
+}
+
+
+/* ===========================
+   Animations
+=========================== */
+
+@keyframes float{
+
+    0%{
+
+        transform:translateY(0) rotate(0deg);
+
+        opacity:0;
+
+    }
+
+    20%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:translateY(-120vh) rotate(360deg);
+
+        opacity:0;
+
+    }
+
+}
+
+
+@keyframes pulse{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.05);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+
+@keyframes popup{
+
+    from{
+
+        transform:scale(.5);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+}
+
+
+/* ===========================
+   Mobile Responsive
+=========================== */
+
+@media(max-width:768px){
+
+h1{
+
+    font-size:34px;
+
+}
+
+.subtitle{
+
+    font-size:18px;
+
+}
+
+#countdown{
+
+    font-size:22px;
+
+}
+
+.letter-box{
+
+    padding:20px;
+
+}
+
+.letter-box p{
+
+    font-size:17px;
+
+}
+
+#surpriseBtn{
+
+    width:100%;
+
+}
+
+}
